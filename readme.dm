@@ -1,5 +1,5 @@
 # Javascript Moderno
 
-* [!Arrays](./01-fundamentos/arreglos.js)
+* [Arrays](./01-fundamentos/arreglos.js)
 * Objetos
 * Funciones
