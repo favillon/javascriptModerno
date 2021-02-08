@@ -34,3 +34,23 @@ console.log({juegoBorrado, juegos});
 // buscar dentro del arreglo y traer el indice
 let busqueda = juegos.indexOf('Juego 3');
 console.log({busqueda, juegos});
+
+
+//  Objetos y ejecucion de fucnoines en los objetos
+dia = 2;
+
+const diasLetras = {
+    0 : () => 'Domingo',
+    1 : () => 'Lunes',
+    2 : () => 'Martes',
+}
+console.log(diasLetras[dia]() || 'Dia no definido');
+
+dia = 10;
+
+const diasLetras2 = {
+    0 : 'Domingo',
+    1 : 'Lunes',
+    2 : 'Martes',
+}
+console.log(diasLetras2[dia] || 'Dia no definido');
