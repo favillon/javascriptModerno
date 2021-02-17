@@ -1,16 +1,16 @@
 html, body {
-    margin: 0px;
-    background-color: #2F4F30;
+    background-color: black;
     color: white;
 }
 
-
-.titulo {
+header , footer {
     text-align: center;
-    background-color: black;
-    color: white;
     padding: 20px;
     font-size: 25px;
+}
+
+main {
+    background-color: #2F4F30;
 }
 
 .carta {
@@ -22,4 +22,4 @@ html, body {
 
 #computadora-cartas, #jugador-cartas {
     height: 240px;
-}
+}   

@@ -23,12 +23,13 @@ const creaDeck = () => {
 creaDeck();
 
 const pedirCarta = () => {
-    let deckGame = Array();
+    let deckGame = [];
+
     if (deckGame.length == 0 ){
         deckGame = deck;
     }
     let carta = deckGame.pop();
-    console.log('carta', carta);
+    
     return carta;
 }
 
@@ -51,19 +52,34 @@ const turnoComputador = (puntosMinimos) => {
         }
     } while ( (puntosComputador < puntosMinimos) && (puntosMinimos <= 21));
 
-    setTimeout(()=>{
+    setTimeout(()=>{}, 100);
+    
+    let mensajeAlerta = "";
+    let icono = "";
+    let mensajeAlerta2 = "";
 
-    },10);
     if (puntosComputador === puntosMinimos) {
-        alert("Nadie Gana");
-    } else if (puntosMinimos < 21) {
-        alert("Computadora gana");
+        mensajeAlerta = "Nadie Gana";
+        icono = "info";
+        mensajeAlerta2 = "Intenta nuevamente";
+    } else if (puntosMinimos > 21) {
+        mensajeAlerta = "Computadora gana";
+        icono = "error";
+        mensajeAlerta2 = "Intenta nuevamente";
     } else if (puntosComputador > 21) {
-        alert("Ganaste");
+        mensajeAlerta = "Ganaste";
+        icono = "success";
+        mensajeAlerta2 = "Sigue asi";
     } else {
-        alert("Computadora gana");
+        mensajeAlerta = "Computadora gana";
+        icono = "error";
+        mensajeAlerta2 = "Intenta nuevamente";
     }
-    //alerta.style
+    Swal.fire({
+        icon: icono,
+        title: mensajeAlerta,
+        text: mensajeAlerta2,
+      })
 };
 
 const crearImagen = (carta) => {
@@ -85,6 +101,8 @@ btnPedir.addEventListener('click', () => {
         btnDetener.disabled = true;
         turnoComputador(puntosJugador);
     } else if(puntosJugador == 21) {
+        btnPedir.disabled = true;
+        btnDetener.disabled = true;
         turnoComputador(puntosJugador);
     }
 });
@@ -92,5 +110,24 @@ btnDetener.addEventListener('click', ()=>{
     btnPedir.disabled = true;
     btnDetener.disabled = true;
     turnoComputador(puntosJugador);
+});
+
+btnNuevo.addEventListener('click', () => {
+
+    
+    deck = [];    
+    creaDeck();
+    puntosJugador     = 0;
+    puntosComputador = 0;
+    
+    smallPuntosHtml[0].innerText = 0;
+    smallPuntosHtml[1].innerText = 0;
+
+    divCartasComputadora.innerHTML = '';
+    divCartasJugador.innerHTML = '';
+
+    btnPedir.disabled   = false;
+    btnDetener.disabled = false;
+
 });
 
