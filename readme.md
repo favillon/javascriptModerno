@@ -18,3 +18,6 @@ node ruta_file
 BlackJack
 
 * [Juego Blackjack](./02-blackjack/)
+
+![blackjack](./img/blackjack.png)
+
