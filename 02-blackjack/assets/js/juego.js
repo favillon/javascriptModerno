@@ -1,5 +1,6 @@
 (()=>{
     'use strict'
+    
     let deck     = [];
     const cartas = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'A','J', 'Q', 'K'];
     const tipos  = ['C', 'D', 'H', 'S']; 
