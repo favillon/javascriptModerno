@@ -21,3 +21,5 @@ BlackJack
 
 ![blackjack](./img/blackjack.png)
 
+
+Herramientas para minificar [minifier](https://javascript-minifier.com/)
