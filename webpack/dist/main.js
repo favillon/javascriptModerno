@@ -1,1 +1,0 @@
-(()=>{"use strict";console.log("Hola Mundo desde index"),(e=>{console.log("creando el saludo");const o=document.createElement("h1");o.innerText="Hola, Como estas favillon -",document.body.append(o)})()})();
