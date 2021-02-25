@@ -71,3 +71,5 @@ Instalar servidor de webpack
 ```shell
 npm i -D webpack-dev-server
 ```
+
+Ejecutar server de webpack con `npm run start:dev` 
