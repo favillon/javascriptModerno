@@ -1,5 +1,7 @@
 # Javascript Moderno
 
+
+### Fundamentos
 Ejecucion consola 
 
 ```shell
@@ -16,7 +18,7 @@ node ruta_file
 
 
 
-BlackJack
+### BlackJack
 
 * [Juego Blackjack](./02-blackjack/)
 
@@ -24,3 +26,35 @@ BlackJack
 
 
 Herramientas para minificar [minifier](https://javascript-minifier.com/)
+
+
+### Webpack
+
+Inicializar package.json
+
+```shell
+npm init
+```
+Completamos la informacion solicitada por consola
+
+```shell
+npm init -y
+```
+Crea un package.json con valores por defecto 
+
+
+Instalar webpack y su cliente
+```shell
+npm install webpack webpack-cli --save-dev
+```
+o
+```shell
+npm i webpack webpack-cli -D
+```
+
+
+Ejecutar webpack con configuracion basica
+
+```shell
+npm run build
+```
