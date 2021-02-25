@@ -1,3 +1,5 @@
+import '../css/saludar.css'
+
 export const saludar = (nombre) => {
     console.log("creando el saludo")
 

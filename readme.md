@@ -73,3 +73,16 @@ npm i -D webpack-dev-server
 ```
 
 Ejecutar server de webpack con `npm run start:dev` 
+
+Crear un archivo de estilos genericos , instalando el sigueiente paquete y configurando  el webpack
+
+```shell
+npm i -D mini-css-extract-plugin
+```
+
+Minificar el style generico, se instala el siguiente paquete
+```shell
+npm i -D optimize-css-assets-webpack-plugin@4.0.0
+```
+
+> solo en modo production se minifica las fuentes

@@ -1,8 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin              = require('html-webpack-plugin');
+const MiniCssExtractPlugin           = require('mini-css-extract-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     
     mode: 'development',
+    optimization : {
+        minimizer : [ new OptimizeCssAssetsWebpackPlugin()]
+    },
     module :{
         rules : [
             {
@@ -12,6 +17,21 @@ module.exports = {
                     //minimize : true, // Minificar el codigo html
                     sources  : false
                 }
+            },
+            {
+                test    : /\.css$/,
+                exclude : /style\.css$/,
+                use     : [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test : /style\.css$/,
+                use : [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
             }
         ]
     },
@@ -21,6 +41,10 @@ module.exports = {
             filename : './index.html',
             inject   :  'body', //true || 'head' || 'body' || false
             // minify   : true // Minificar el codigo html
+        }),
+        new MiniCssExtractPlugin({
+            filename : '[name].css',
+            ignoreOrder: false
         })
     ]
 
