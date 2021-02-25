@@ -86,3 +86,17 @@ npm i -D optimize-css-assets-webpack-plugin@4.0.0
 ```
 
 > solo en modo production se minifica las fuentes
+
+
+Manejo de imagenes con webpack para carga dentro de los modulos
+
+```shell
+npm i -D file-loader 
+```
+
+Para la carga delos archivo estaticos sin modificacione se usa el plugin de copy
+```shell
+npm i -D copy-webpack-plugin
+```
+
+Se encargar de copiar de una ruta a a el dist
