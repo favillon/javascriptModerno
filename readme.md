@@ -58,3 +58,16 @@ Ejecutar webpack con configuracion basica
 ```shell
 npm run build
 ```
+
+Instalar paquetes para copiar el html index de src a dist y agregar el builder al html
+```shell
+npm i -D  html-loader html-webpack-plugin
+```
+
+Se configura el archivo `webpack.config.js` para la carga del html y la generacion del builder.js
+
+
+Instalar servidor de webpack 
+```shell
+npm i -D webpack-dev-server
+```
