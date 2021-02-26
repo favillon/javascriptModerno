@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin    = require('copy-webpack-plugin');
 const path                 = require('path');
 
 module.exports = {
@@ -54,17 +53,7 @@ module.exports = {
             filename : path.resolve('dist', 'index.html'),
             inject   : 'body', //true || 'head' || 'body' || false
             minify   : true // Minificar el codigo html
-        }),
-        new MiniCssExtractPlugin({
-            filename : '[name]-[contenthash].css',
-            ignoreOrder: false
-        }),
-        new CopyWebpackPlugin({
-            patterns : [
-                { from : path.resolve('src', 'assets'), to : path.resolve('dist', 'assetsCopy') },
-                { from : path.resolve('dist'), to : path.resolve('../docs') }
-            ]
-        }),
+        })
     ]
 
 }
