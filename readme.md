@@ -100,3 +100,23 @@ npm i -D copy-webpack-plugin
 ```
 
 Se encargar de copiar de una ruta a a el dist
+
+
+Se crea el archivo para la configuracion en PDN `webpack.prod.js`
+
+Se Instala babel 
+```shell
+npm i -D babel-loader @babel/core
+```
+
+Ajustar reglas en webpack
+
+Para minificar y traspilar de es6 aes5
+
+```shell
+npm i -D babel-preset-minify
+```
+```shell
+npm i -D @babel/preset-env
+
+```

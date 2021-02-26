@@ -1,21 +1,15 @@
-const HtmlWebpackPlugin              = require('html-webpack-plugin');
-const MiniCssExtractPlugin           = require('mini-css-extract-plugin');
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin              = require('copy-webpack-plugin');
+const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin    = require('copy-webpack-plugin');
+const path                 = require('path');
 
 module.exports = {
-    
-    mode: 'development',
-    optimization : {
-        minimizer : [ new OptimizeCssAssetsWebpackPlugin()]
-    },
     module :{
         rules : [
             {
                 test : /\.html$/i,
                 loader : 'html-loader',
                 options : {
-                    //minimize : true, // Minificar el codigo html
                     sources  : false
                 }
             },
@@ -41,15 +35,25 @@ module.exports = {
                     outputPath: 'assets/images',
                     name : '[name]-[hash].[ext]',
                 }
-            }
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
+              }
         ]
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template : './src/index.html',
-            filename : './index.html',
-            inject   :  'body', //true || 'head' || 'body' || false
-            // minify   : true // Minificar el codigo html
+            template : path.resolve('src', 'index.html'),
+            filename : path.resolve('dist', 'index.html'),
+            inject   : 'body', //true || 'head' || 'body' || false
+            minify   : true // Minificar el codigo html
         }),
         new MiniCssExtractPlugin({
             filename : '[name].css',
@@ -57,7 +61,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns : [
-                { from : 'src/assets/', to : 'assetsCopy/' }
+                { from : path.resolve('src', 'assets'), to : path.resolve('dist', 'assetsCopy') }
             ]
         })
     ]
