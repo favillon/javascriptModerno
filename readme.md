@@ -116,3 +116,8 @@ Para minificar y traspilar de es6 aes5
 ```shell
 npm i -D @babel/preset-env terser-webpack-plugin
 ```
+
+Limpiar carpeta dist
+```shell
+npm i -D clean-webpack-plugin
+```

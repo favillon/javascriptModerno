@@ -3,6 +3,6 @@ import './style.css'
 
 console.log("Hola Mundo desde index")
 
-const parametroNombre = 'favillon -'
+const parametroNombre = '..:: favillon ::..'
 saludar(parametroNombre);
 

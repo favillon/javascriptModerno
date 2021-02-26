@@ -56,14 +56,15 @@ module.exports = {
             minify   : true // Minificar el codigo html
         }),
         new MiniCssExtractPlugin({
-            filename : '[name].css',
+            filename : '[name]-[contenthash].css',
             ignoreOrder: false
         }),
         new CopyWebpackPlugin({
             patterns : [
-                { from : path.resolve('src', 'assets'), to : path.resolve('dist', 'assetsCopy') }
+                { from : path.resolve('src', 'assets'), to : path.resolve('dist', 'assetsCopy') },
+                { from : path.resolve('dist'), to : path.resolve('../docs') }
             ]
-        })
+        }),
     ]
 
 }
