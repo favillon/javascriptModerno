@@ -114,9 +114,5 @@ Ajustar reglas en webpack
 Para minificar y traspilar de es6 aes5
 
 ```shell
-npm i -D babel-preset-minify
-```
-```shell
-npm i -D @babel/preset-env
-
+npm i -D @babel/preset-env terser-webpack-plugin
 ```
