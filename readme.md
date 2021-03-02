@@ -122,6 +122,8 @@ Limpiar carpeta dist
 npm i -D clean-webpack-plugin
 ```
 
+![webpack](./img/webpack.png)
+
 
 ##  Todo 
 
@@ -131,3 +133,7 @@ Proyecto lista de tareas
 
 
 Ejemplos de callback y promesa que se ejecutan
+
+```shell
+node callback-promesas/file.js
+```
