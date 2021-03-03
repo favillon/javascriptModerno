@@ -3,13 +3,16 @@ import {
     proLenta, 
     proMedia, 
     proRapida, 
-    proRapidaError
+    proRapidaError,
+    buscarHeroeAsync
 } from './heroes-promesas-json.js';
+
+import {obtenerHeroesArr} from './await.js'
 
 console.log('Hola mundo desde promesas');
 
 
-const heroeId = 'cap1i';
+const heroeId = 'capi';
 
 // Promesas
 buscarHeroePromesas(heroeId)
@@ -19,6 +22,11 @@ buscarHeroePromesas(heroeId)
     .catch(
         error => console.error(error)
     );
+
+
+//Async
+console.log('Async');
+buscarHeroeAsync(heroeId).then(console.log).catch(console.warn)
 
 
 Promise.all([true, 'hola', 123]).then(arr=>{
@@ -47,3 +55,12 @@ proLenta.then(console.log);
 
 Promise.race([proLenta, proMedia, proRapida, proRapidaError])
     .then(console.log)
+
+
+console.log("Await.....")
+console.log(".....")
+console.log(".....")
+
+const traerHeroes = obtenerHeroesArr();
+
+console.table(traerHeroes);

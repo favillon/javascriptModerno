@@ -27,6 +27,17 @@ export const buscarHeroe = (id) => {
     
 }
 
+const buscarHeroeAsync = async (id) => {
+
+    const heroe = heroes[id];
+    if (heroe) {
+        return heroe;
+    } else {
+        throw `No exsite el heroe ${id}`
+    }
+}
+
+
 const proLenta =  new Promise((resolve, reject) => {
     setTimeout( () => resolve('Promesa Lenta'), 2000)
 });
@@ -43,5 +54,5 @@ const proRapidaError =  new Promise((resolve, reject) => {
 });
 
 export {
-    proLenta, proMedia, proRapida, proRapidaError
+    proLenta, proMedia, proRapida, proRapidaError, buscarHeroeAsync
 }
