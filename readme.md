@@ -137,3 +137,11 @@ Ejemplos de callback y promesa que se ejecutan
 ```shell
 node callback-promesas/file.js
 ```
+
+## Peticiones 
+
+Ejemplos de peticiones
+
+```shell
+node peticionesHttp/file.js
+```
