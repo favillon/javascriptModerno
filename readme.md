@@ -142,6 +142,4 @@ node callback-promesas/file.js
 
 Ejemplos de peticiones
 
-```shell
-node peticionesHttp/file.js
-```
+Eventualmente se debe levantar live-server para poder ver las peticiones ya que node no cuenta con fetch en su core
